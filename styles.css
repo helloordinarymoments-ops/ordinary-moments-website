@@ -26,3 +26,12 @@
 .tile figcaption{letter-spacing:.15px}
 @media(max-width:760px){.photo-grid{grid-auto-rows:clamp(150px,39vw,220px);gap:12px}}
 @media(max-width:480px){.photo-grid{grid-auto-rows:clamp(145px,42vw,190px)}}
+
+/* Hero carousel: one full image at a time */
+.hero-photo-rail{gap:0;overflow-x:auto;scrollbar-width:none;}
+.hero-photo-rail::-webkit-scrollbar{display:none}
+.hero-slide{flex-basis:100%;}
+.hero-slide img{height:520px;}
+.hero-scroll-note{letter-spacing:1.5px;text-transform:uppercase;}
+@media(max-width:760px){.hero-slide{flex-basis:100%;}.hero-slide img{height:430px;}}
+@media(max-width:480px){.hero-slide{flex-basis:100%;}.hero-slide img{height:365px;}}
