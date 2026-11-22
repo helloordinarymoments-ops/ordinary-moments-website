@@ -32,14 +32,24 @@
         <a class="button" href="#contact">let's make a memory <span>↗</span></a>
       </div>
       <div class="hero-photo-wrap">
-        <div class="hero-photo-rail" aria-label="Scrolling preview of Ordinary Moments photography" tabindex="0">
-          <figure class="hero-slide"><img src="images/hero-boy.jpg" alt="Child portrait in warm natural light"><figcaption>the good stuff, just as it is</figcaption></figure>
+        <div class="hero-photo-rail hero-fade-carousel" aria-label="Ordinary Moments featured photographs">
+          <figure class="hero-slide active"><img src="images/hero-boy.jpg" alt="Child portrait in warm natural light"><figcaption>the good stuff, just as it is</figcaption></figure>
           <figure class="hero-slide"><img src="images/siblings-play.jpg" alt="Siblings sharing a playful moment outdoors"><figcaption>the silly stuff</figcaption></figure>
           <figure class="hero-slide"><img src="images/family-session.jpg" alt="Family together outdoors"><figcaption>your people</figcaption></figure>
           <figure class="hero-slide"><img src="images/couple-session.jpg" alt="Couple sharing a quiet moment outdoors"><figcaption>still choosing each other</figcaption></figure>
           <figure class="hero-slide"><img src="images/girl-portrait.jpg" alt="Child portrait in soft natural light"><figcaption>the little details</figcaption></figure>
         </div>
-        <span class="hero-scroll-note">SCROLL TO WANDER <span aria-hidden="true">→</span></span>
+        <div class="hero-carousel-controls" aria-label="Photo slideshow controls">
+          <button class="hero-carousel-prev" type="button" aria-label="Previous photograph">←</button>
+          <div class="hero-carousel-dots" role="group" aria-label="Choose featured photograph">
+            <button class="hero-carousel-dot active" type="button" aria-label="Show photograph 1" aria-pressed="true"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 2" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 3" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 4" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 5" aria-pressed="false"></button>
+          </div>
+          <button class="hero-carousel-next" type="button" aria-label="Next photograph">→</button>
+        </div>
       </div>
       <span class="hero-side-note">REAL LIFE · REAL CONNECTION · REAL MOMENTS</span>
     </section>
