@@ -13,3 +13,16 @@
 .hero-scroll-note span{font-size:12px;margin-left:8px}
 @media(max-width:760px){.hero-photo-wrap{width:100%}.hero-slide{flex-basis:83%}.hero-slide img{height:430px}}
 @media(max-width:480px){.hero-slide{flex-basis:88%}.hero-slide img{height:365px}.hero-slide figcaption{left:10px;bottom:10px;padding:8px 11px;font-size:15px}}
+
+/* Editorial portfolio rhythm */
+.portfolio .section-heading{gap:7vw}
+.portfolio .section-heading>p{line-height:1.9}
+.photo-grid{grid-auto-rows:clamp(190px,22vw,300px);gap:20px}
+.tile-large{grid-row:span 2}
+.tile-wide{grid-column:span 2}
+.tile:not(.tile-large):not(.tile-wide){min-height:0}
+.tile img{filter:saturate(.94);transition:transform .7s ease,filter .7s ease}
+.tile:hover img{filter:saturate(1.03)}
+.tile figcaption{letter-spacing:.15px}
+@media(max-width:760px){.photo-grid{grid-auto-rows:clamp(150px,39vw,220px);gap:12px}}
+@media(max-width:480px){.photo-grid{grid-auto-rows:clamp(145px,42vw,190px)}}
