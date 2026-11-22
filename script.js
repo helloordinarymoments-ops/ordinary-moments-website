@@ -8,19 +8,22 @@ portfolioFilters.forEach(filter=>filter.addEventListener('click',()=>{
   portfolioTiles.forEach(tile=>{tile.hidden=selected!=='all'&&tile.dataset.category!==selected;});
 }));
 
-// Hero photo carousel: advance gently, pause while hovered or focused.
-const heroRail=document.querySelector('.hero-photo-rail');
-if(heroRail){
-  const heroSlides=heroRail.querySelectorAll('.hero-slide');
-  const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let heroIndex=0,heroTimer=null;
-  const advanceHero=()=>{heroIndex=(heroIndex+1)%heroSlides.length;heroRail.scrollTo({left:heroSlides[heroIndex].offsetLeft-heroRail.offsetLeft,behavior:'smooth'});};
-  const startHero=()=>{if(!prefersReducedMotion&&!heroTimer)heroTimer=setInterval(advanceHero,6500);};
-  const stopHero=()=>{if(heroTimer){clearInterval(heroTimer);heroTimer=null;}};
-  heroRail.addEventListener('mouseenter',stopHero);
-  heroRail.addEventListener('mouseleave',startHero);
-  heroRail.addEventListener('focusin',stopHero);
-  heroRail.addEventListener('focusout',startHero);
-  heroRail.addEventListener('scroll',()=>{let closest=0,dist=Infinity;heroSlides.forEach((slide,i)=>{const d=Math.abs(slide.offsetLeft-heroRail.offsetLeft-heroRail.scrollLeft);if(d<dist){dist=d;closest=i;}});heroIndex=closest;},{passive:true});
-  startHero();
+
+// Soft fade hero slideshow, with controls and hover/focus pause.
+const heroCarousel=document.querySelector('.hero-fade-carousel');
+if(heroCarousel){
+  const slides=[...heroCarousel.querySelectorAll('.hero-slide')];
+  const dots=[...document.querySelectorAll('.hero-carousel-dot')];
+  const prev=document.querySelector('.hero-carousel-prev'),next=document.querySelector('.hero-carousel-next');
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index=0,timer=null;
+  const show=(n)=>{index=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===index));dots.forEach((d,i)=>{d.classList.toggle('active',i===index);d.setAttribute('aria-pressed',String(i===index));});};
+  const stop=()=>{if(timer){clearInterval(timer);timer=null;}};
+  const start=()=>{if(!reduceMotion&&!timer)timer=setInterval(()=>show(index+1),6500);};
+  prev?.addEventListener('click',()=>{stop();show(index-1);start();});
+  next?.addEventListener('click',()=>{stop();show(index+1);start();});
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>{stop();show(i);start();}));
+  heroCarousel.addEventListener('mouseenter',stop);heroCarousel.addEventListener('mouseleave',start);
+  heroCarousel.addEventListener('focusin',stop);heroCarousel.addEventListener('focusout',start);
+  show(0);start();
 }
