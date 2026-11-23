@@ -32,8 +32,24 @@
         <a class="button" href="#contact">let's make a memory <span>↗</span></a>
       </div>
       <div class="hero-photo-wrap">
-        <img class="hero-photo" src="images/hero-boy.jpg" alt="A smiling child sitting outdoors in warm natural light">
-        <span class="photo-note">the good stuff, just as it is</span>
+        <div class="hero-photo-rail hero-fade-carousel" aria-label="Ordinary Moments featured photographs">
+          <figure class="hero-slide active"><img src="images/hero-boy.jpg" alt="Child portrait in warm natural light"><figcaption>the good stuff, just as it is</figcaption></figure>
+          <figure class="hero-slide"><img src="images/siblings-play.jpg" alt="Siblings sharing a playful moment outdoors"><figcaption>the silly stuff</figcaption></figure>
+          <figure class="hero-slide"><img src="images/family-session.jpg" alt="Family together outdoors"><figcaption>your people</figcaption></figure>
+          <figure class="hero-slide"><img src="images/couple-session.jpg" alt="Couple sharing a quiet moment outdoors"><figcaption>still choosing each other</figcaption></figure>
+          <figure class="hero-slide"><img src="images/girl-portrait.jpg" alt="Child portrait in soft natural light"><figcaption>the little details</figcaption></figure>
+        </div>
+        <div class="hero-carousel-controls" aria-label="Photo slideshow controls">
+          <button class="hero-carousel-prev" type="button" aria-label="Previous photograph">←</button>
+          <div class="hero-carousel-dots" role="group" aria-label="Choose featured photograph">
+            <button class="hero-carousel-dot active" type="button" aria-label="Show photograph 1" aria-pressed="true"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 2" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 3" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 4" aria-pressed="false"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show photograph 5" aria-pressed="false"></button>
+          </div>
+          <button class="hero-carousel-next" type="button" aria-label="Next photograph">→</button>
+        </div>
       </div>
       <span class="hero-side-note">REAL LIFE · REAL CONNECTION · REAL MOMENTS</span>
     </section>
@@ -49,19 +65,25 @@
         <div><p class="eyebrow">A FEW FAVORITE FRAMES</p><h2>little moments,<br><em>big feelings.</em></h2></div>
         <p>Warm light, real connection, and room to be yourself. That's the good stuff.</p>
       </div>
+      <div class="portfolio-filters" role="group" aria-label="Filter portfolio photographs">
+        <button class="portfolio-filter active" type="button" data-filter="all" aria-pressed="true">all moments</button>
+        <button class="portfolio-filter" type="button" data-filter="family" aria-pressed="false">families</button>
+        <button class="portfolio-filter" type="button" data-filter="couples" aria-pressed="false">couples</button>
+        <button class="portfolio-filter" type="button" data-filter="children" aria-pressed="false">children</button>
+      </div>
       <div class="photo-grid">
-        <figure class="tile tile-large"><img src="images/siblings-play.jpg" alt="Two siblings sharing a playful moment outdoors"><figcaption>the silly stuff</figcaption></figure>
-        <figure class="tile"><img src="images/golden-portrait.jpg" alt="A child in soft afternoon sunlight"><figcaption>growing up</figcaption></figure>
-        <figure class="tile"><img src="images/family-session.jpg" alt="A family together outdoors"><figcaption>your people</figcaption></figure>
-        <figure class="tile"><img src="images/siblings-portrait.jpg" alt="Three siblings together in the autumn light"><figcaption>the ones who know you</figcaption></figure>
-        <figure class="tile tile-wide"><img src="images/couple-session.jpg" alt="A couple sharing a quiet moment in a field"><figcaption>still choosing each other</figcaption></figure>
-        <figure class="tile"><img src="images/girl-portrait.jpg" alt="A natural child portrait among tall grasses"><figcaption>the little details</figcaption></figure>
-        <figure class="tile"><img src="images/boy-by-the-lake.jpg" alt="A smiling child by the water"><figcaption>right where you are</figcaption></figure>
+        <figure class="tile tile-large" data-category="children"><img src="images/siblings-play.jpg" alt="Two siblings sharing a playful moment outdoors"><figcaption>the silly stuff</figcaption></figure>
+        <figure class="tile" data-category="children"><img src="images/golden-portrait.jpg" alt="A child in soft afternoon sunlight"><figcaption>growing up</figcaption></figure>
+        <figure class="tile" data-category="family"><img src="images/family-session.jpg" alt="A family together outdoors"><figcaption>your people</figcaption></figure>
+        <figure class="tile" data-category="family"><img src="images/siblings-portrait.jpg" alt="Three siblings together in the autumn light"><figcaption>the ones who know you</figcaption></figure>
+        <figure class="tile tile-wide" data-category="couples"><img src="images/couple-session.jpg" alt="A couple sharing a quiet moment in a field"><figcaption>still choosing each other</figcaption></figure>
+        <figure class="tile" data-category="children"><img src="images/girl-portrait.jpg" alt="A natural child portrait among tall grasses"><figcaption>the little details</figcaption></figure>
+        <figure class="tile" data-category="children"><img src="images/boy-by-the-lake.jpg" alt="A smiling child by the water"><figcaption>right where you are</figcaption></figure>
       </div>
     </section>
 
     <section class="about section" id="about">
-      <div class="about-photo"><img src="images/about-photographer.png" alt="Chelsea photographing a newborn during a relaxed in-home session"><span class="image-caption">a little behind the lens</span></div>
+      <div class="about-photo about-collage"><img class="about-family" src="goodman-family.jpg" alt="Chelsea and her family together"><div class="about-inset"><img src="images/about-photographer.png" alt="Chelsea photographing a newborn during a relaxed in-home session"><span class="image-caption">a little behind the lens</span></div></div>
       <div class="about-copy">
         <p class="eyebrow">A LITTLE ABOUT THE PERSON BEHIND THE CAMERA</p>
         <h2>Hi, I'm Chelsea.<br><em>I'm so glad you're here.</em></h2>
@@ -72,15 +94,17 @@
     </section>
 
     <section class="sessions section" id="sessions">
-      <p class="eyebrow">MADE FOR YOUR KIND OF MOMENT</p>
-      <h2>whatever life looks like<br><em>right now.</em></h2>
-      <div class="session-list">
-        <article><span>01</span><h3>Families</h3><p>The whole crew, exactly as you are.</p></article>
-        <article><span>02</span><h3>Children</h3><p>All the personality, all the growing.</p></article>
-        <article><span>03</span><h3>Seniors</h3><p>Big milestones and the start of something new.</p></article>
-        <article><span>04</span><h3>Couples</h3><p>The two of you, in your own little world.</p></article>
-        <article><span>05</span><h3>Maternity & newborn</h3><p>A new chapter, and the tiny details you want to remember.</p></article>
+      <div class="sessions-heading">
+        <div><p class="eyebrow">MADE FOR YOUR KIND OF MOMENT</p>
+        <h2>whatever life looks like<br><em>right now.</em></h2></div>
+        <p class="sessions-intro">No stiff posing or pressure to make everything perfect. Just a little guidance, lots of room to be yourselves, and photographs that feel like you.</p>
       </div>
+      <div class="session-cards">
+        <a class="session-card" href="#contact"><img src="images/family-outdoors.jpg" alt="Family enjoying time together outdoors"><div class="session-card-copy"><span>01 / TOGETHER</span><h3>Families</h3><p>The whole crew, exactly as you are.</p><b>LET'S MAKE IT A MEMORY ↗</b></div></a>
+        <a class="session-card" href="#contact"><img src="images/kids-together.jpg" alt="Children together in a natural moment"><div class="session-card-copy"><span>02 / GROWING</span><h3>Children</h3><p>All the personality, all the growing.</p><b>LET'S MAKE IT A MEMORY ↗</b></div></a>
+        <a class="session-card" href="#contact"><img src="images/couple-warmth.jpg" alt="Couple sharing a warm moment"><div class="session-card-copy"><span>03 / JUST US</span><h3>Couples</h3><p>The two of you, in your own little world.</p><b>LET'S MAKE IT A MEMORY ↗</b></div></a>
+      </div>
+      <div class="session-more"><span>ALSO CELEBRATING</span><p>Seniors <i>·</i> Maternity <i>·</i> Newborns</p></div>
     </section>
 
     <section class="pop-up">
