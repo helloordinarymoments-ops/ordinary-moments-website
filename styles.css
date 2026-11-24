@@ -187,7 +187,7 @@
 .hero-fade-carousel{perspective:1800px;isolation:isolate;overflow:hidden;}
 .hero-fade-carousel .hero-slide{transform-origin:left center;transform:rotateY(0deg);backface-visibility:hidden;will-change:transform,opacity;z-index:0;}
 .hero-fade-carousel .hero-slide.active{opacity:1;z-index:1;}
-.hero-fade-carousel .hero-slide.page-turning{opacity:1;z-index:3;transform:rotateY(-92deg);transition:transform 1.05s cubic-bezier(.62,.05,.35,1),opacity .95s ease;box-shadow:-18px 0 35px rgba(30,22,15,.24);}
+.hero-fade-carousel .hero-slide.page-turning{opacity:1;z-index:3;transform:rotateY(-92deg);transition:transform 1.35s cubic-bezier(.62,.05,.35,1),opacity 1.2s ease;box-shadow:-18px 0 35px rgba(30,22,15,.24);}
 .hero-fade-carousel .hero-slide.page-turning::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,20,15,.12),rgba(25,20,15,.0) 28%,rgba(25,20,15,.22));opacity:1;pointer-events:none;}
 .hero-fade-carousel .hero-slide.page-turning img{filter:brightness(.98);}
 .hero-fade-carousel .hero-slide.page-under{opacity:1;z-index:2;}
