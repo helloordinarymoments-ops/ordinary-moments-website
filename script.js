@@ -30,7 +30,7 @@ if(heroCarousel){
     incoming.classList.add('page-under','active');
     outgoing.classList.add('page-turning');
     index=target;updateDots();
-    turnTimer=setTimeout(()=>{outgoing.classList.remove('active','page-turning');incoming.classList.remove('page-under');busy=false;},1100);
+    turnTimer=setTimeout(()=>{outgoing.classList.remove('active','page-turning');incoming.classList.remove('page-under');busy=false;},1400);
   };
   const stop=()=>{if(timer){clearInterval(timer);timer=null;}};
   const start=()=>{if(!reduceMotion&&!timer)timer=setInterval(()=>show(index+1),6500);};
